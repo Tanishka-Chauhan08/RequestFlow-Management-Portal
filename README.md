@@ -1,6 +1,6 @@
 # 🛠️ RequestFlow | Service Request Management Portal
 
-**RequestFlow** is a robust and responsive ticket management system designed to streamline internal operations. It allows users to create, track, and manage service requests with real-time updates and an intuitive user interface.
+**RequestFlow** is a responsive ticket management system that helps streamline internal operations by allowing users to easily create, track, and manage service requests.
 
 ---
 
