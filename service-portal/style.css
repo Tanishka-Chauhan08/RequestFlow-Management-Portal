@@ -1,0 +1,295 @@
+:root {
+  --primary: #4f46e5; /* Modern Indigo */
+  --primary-hover: #4338ca;
+  --bg: #f3f4f6; /* Light Gray Background */
+  --card: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  /* Priority Colors */
+  --high-bg: #fee2e2;
+  --high-text: #dc2626;
+  --med-bg: #fef3c7;
+  --med-text: #d97706;
+  --low-bg: #d1fae5;
+  --low-text: #059669;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* Navbar */
+.navbar {
+  background: white;
+  padding: 1rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+#stats-header {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Form Controls */
+.form-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  outline: 2px solid var(--primary);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+/* Table Styling */
+.table-container {
+  padding: 0;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  background: #f9fafb;
+  padding: 1rem 1.5rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Status Badges */
+.badge {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Action Buttons */
+.status-btn {
+  background: #eff6ff;
+  color: var(--primary);
+  border: 1px solid #dbeafe;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.status-btn:hover {
+  background: #dbeafe;
+}
+
+.delete-btn {
+  color: #ef4444;
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+}
+/* --- MOBILE RESPONSIVE UPDATES --- */
+@media (max-width: 768px) {
+  /* Navbar aur Stats Header fix */
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 1rem;
+    text-align: center;
+    position: static !important; /* Sticky ya Fixed ki jagah static kar dein */
+    top: auto !important;
+  }
+
+  #stats-header {
+    width: auto !important; /* Poora failne se rokega */
+    display: inline-flex;
+    margin: 10px auto; /* Center karne ke liye */
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Create Ticket Form Row fix */
+  .form-row {
+    grid-template-columns: 1fr !important; /* Saare inputs stack ho jayenge */
+    gap: 15px;
+  }
+
+  .btn-primary {
+    width: fit-content !important; /* Jitna text utni width */
+    min-width: 150px;
+    margin: 10px auto 0 !important; /* Center mein align */
+    display: block;
+    padding: 10px 25px;
+    border-radius: 50px; /* Capsule shape professional lagta hai */
+  }
+
+  /* Filter Bar fix */
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* TABLE SCROLL FIX (Sabse important) */
+  .table-container {
+    overflow-x: auto; /* Horizontal scroll enable karega */
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem; /* Card ke edges tak touch hone ke liye */
+    padding: 0 1rem;
+  }
+
+  table {
+    min-width: 600px; /* Force karega scroll bar ko appear hone mein */
+  }
+
+  .container {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  /* 1. Sabhi cells ki height ko force-lock karein */
+  /* 1. Content ko wrap hone do taaki text next line mein aaye */
+  td:last-child {
+    min-width: 170px !important; /* Buttons ke liye itni space zaroori hai */
+    white-space: nowrap !important; /* Buttons ko stack hone se rokega */
+  }
+
+  /* 2. Buttons ke container div ko force karo side-by-side rehne ke liye */
+  td:last-child div {
+    display: flex !important;
+    flex-direction: row !important; /* Zaroori hai taaki stack na ho */
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  /* 3. Buttons ka size thoda compact karo taaki wo fit ho jayein */
+  .status-btn,
+  .delete-btn {
+    padding: 5px 10px !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0; /* Isse button chaptā (squeeze) nahi hoga */
+  }
+
+  /* Delete button ko thoda subtle banayein */
+  .delete-btn {
+    background-color: #fff5f5 !important;
+    color: #e53e3e !important;
+    border: 1px solid #feb2b2 !important;
+  }
+}

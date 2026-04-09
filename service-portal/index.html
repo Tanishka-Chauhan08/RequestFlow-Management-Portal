@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftServe | Management Portal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">RequestFlow</div>
+      <div id="stats-header">
+        Total Tickets: <span id="count-total">0</span>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="card form-section">
+        <h3>Create New Ticket</h3>
+        <form id="ticket-form" class="form-row">
+          <input
+            type="text"
+            id="title"
+            placeholder="What needs fixing? (e.g., Server Down)"
+            required
+          />
+          <select id="priority">
+            <option value="Low">Low Priority</option>
+            <option value="Medium">Medium Priority</option>
+            <option value="High">High Priority</option>
+          </select>
+          <button type="submit" class="btn-primary">Create Ticket</button>
+        </form>
+      </section>
+
+      <section class="filter-bar">
+        <input type="text" id="search-bar" placeholder="Search by title..." />
+        <select id="filter-priority">
+          <option value="All">All Priorities</option>
+          <option value="High">High Only</option>
+          <option value="Medium">Medium Only</option>
+          <option value="Low">Low Only</option>
+        </select>
+      </section>
+
+      <section class="card table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Ticket ID</th>
+              <th>Title</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="ticket-list"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
