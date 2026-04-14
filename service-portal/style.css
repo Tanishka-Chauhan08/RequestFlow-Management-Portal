@@ -1,7 +1,7 @@
 :root {
-  --primary: #4f46e5; /* Modern Indigo */
+  --primary: #4f46e5; 
   --primary-hover: #4338ca;
-  --bg: #f3f4f6; /* Light Gray Background */
+  --bg: #f3f4f6; 
   --card: #ffffff;
   --text-main: #111827;
   --text-muted: #6b7280;
@@ -206,37 +206,36 @@ tr:hover {
 }
 /* --- MOBILE RESPONSIVE UPDATES --- */
 @media (max-width: 768px) {
-  /* Navbar aur Stats Header fix */
   .navbar {
     flex-direction: column;
     gap: 15px;
     padding: 1rem;
     text-align: center;
-    position: static !important; /* Sticky ya Fixed ki jagah static kar dein */
+    position: static !important;
     top: auto !important;
   }
 
   #stats-header {
-    width: auto !important; /* Poora failne se rokega */
+    width: auto !important; 
     display: inline-flex;
-    margin: 10px auto; /* Center karne ke liye */
+    margin: 10px auto; 
     padding: 8px 20px;
     font-size: 0.9rem;
   }
 
   /* Create Ticket Form Row fix */
   .form-row {
-    grid-template-columns: 1fr !important; /* Saare inputs stack ho jayenge */
+    grid-template-columns: 1fr !important; 
     gap: 15px;
   }
 
   .btn-primary {
-    width: fit-content !important; /* Jitna text utni width */
+    width: fit-content !important; 
     min-width: 150px;
-    margin: 10px auto 0 !important; /* Center mein align */
+    margin: 10px auto 0 !important; 
     display: block;
     padding: 10px 25px;
-    border-radius: 50px; /* Capsule shape professional lagta hai */
+    border-radius: 50px; 
   }
 
   /* Filter Bar fix */
@@ -245,48 +244,47 @@ tr:hover {
     align-items: stretch;
   }
 
-  /* TABLE SCROLL FIX (Sabse important) */
+  /* TABLE SCROLL FIX */
   .table-container {
-    overflow-x: auto; /* Horizontal scroll enable karega */
+    overflow-x: auto; 
     -webkit-overflow-scrolling: touch;
-    margin: 0 -1rem; /* Card ke edges tak touch hone ke liye */
+    margin: 0 -1rem; 
     padding: 0 1rem;
   }
 
   table {
-    min-width: 600px; /* Force karega scroll bar ko appear hone mein */
+    min-width: 600px;
   }
 
   .container {
     padding: 1rem;
     margin-top: 1rem;
   }
-  /* 1. Sabhi cells ki height ko force-lock karein */
-  /* 1. Content ko wrap hone do taaki text next line mein aaye */
+ 
   td:last-child {
-    min-width: 170px !important; /* Buttons ke liye itni space zaroori hai */
-    white-space: nowrap !important; /* Buttons ko stack hone se rokega */
+    min-width: 170px !important;
+    white-space: nowrap !important;
   }
 
-  /* 2. Buttons ke container div ko force karo side-by-side rehne ke liye */
+ 
   td:last-child div {
     display: flex !important;
-    flex-direction: row !important; /* Zaroori hai taaki stack na ho */
+    flex-direction: row !important; 
     gap: 8px;
     align-items: center;
     justify-content: flex-start;
     height: 100%;
   }
 
-  /* 3. Buttons ka size thoda compact karo taaki wo fit ho jayein */
+  
   .status-btn,
   .delete-btn {
     padding: 5px 10px !important;
     font-size: 0.8rem !important;
-    flex-shrink: 0; /* Isse button chaptā (squeeze) nahi hoga */
+    flex-shrink: 0; 
   }
 
-  /* Delete button ko thoda subtle banayein */
+  
   .delete-btn {
     background-color: #fff5f5 !important;
     color: #e53e3e !important;
