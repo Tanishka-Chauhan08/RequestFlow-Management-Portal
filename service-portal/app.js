@@ -29,7 +29,7 @@ document.getElementById("ticket-list").addEventListener("click", (e) => {
 
   // 2. Status Toggle with Confirmation
   else if (e.target.classList.contains("status-btn")) {
-    const currentStatus = e.target.innerText; // "Close" ya "Reopen"
+    const currentStatus = e.target.innerText; 
     const actionText = currentStatus === "Close" ? "close" : "reopen";
 
     if (confirm(`Do you want to ${actionText} this ticket?`)) {
